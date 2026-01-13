@@ -1,1 +1,25 @@
+# --- Nix ---
+.direnv/
+result
+result-*
+
+# --- Rust & Cargo ---
+# 忽略 target，无论它是真实目录还是我们创建的软链接
 /target
+# 忽略 cargo生成的锁文件（看情况，如果是库建议提交，如果是二进制项目建议提交，但也看个人喜好）
+# Cargo.lock 
+
+# --- IDE ---
+.idea/
+.vscode/
+*.swp
+
+# --- Direnv ---
+# 忽略环境授权文件（包含绝对路径，不适合提交到 git）
+.envrc_state
+# 通常建议提交 .envrc，但如果你里面写了只有你自己机器能用的路径，也可以忽略
+# .envrc 
+
+# --- Sccache ---
+# 以防万一有人把缓存设到了项目里
+sccache/
